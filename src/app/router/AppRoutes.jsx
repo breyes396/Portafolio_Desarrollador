@@ -1,9 +1,9 @@
-import { useState } from 'react'
 import MainLayout from '../layouts/MainLayout.jsx'
 import HomeView from '../../features/home/components/HomeView.jsx'
 import AboutView from '../../features/about/components/AboutView.jsx'
 import SkillsView from '../../features/skills/components/SkillsView.jsx'
 import ProjectsView from '../../features/projects/components/ProjectsView.jsx'
+import { useNavigation } from './hooks/useNavigation.js'
 
 const sectionViews = {
   home: HomeView,
@@ -13,13 +13,13 @@ const sectionViews = {
 }
 
 function AppRoutes() {
-  const [activeSection, setActiveSection] = useState('home')
+  const { activeSection, navigate } = useNavigation()
 
   const ActiveView = sectionViews[activeSection] ?? HomeView
 
   return (
-    <MainLayout currentSection={activeSection} setSection={setActiveSection}>
-      <ActiveView onNavigate={setActiveSection} />
+    <MainLayout currentSection={activeSection} setSection={navigate}>
+      <ActiveView onNavigate={navigate} />
     </MainLayout>
   )
 }

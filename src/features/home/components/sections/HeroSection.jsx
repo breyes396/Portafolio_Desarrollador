@@ -1,0 +1,23 @@
+import { IconUser } from '../../../../shared/components/icons/index.jsx'
+
+function HeroSection({ perfil }) {
+  return (
+    <section className="grid w-full min-h-screen lg:grid-cols-2">
+      <div className="flex items-center justify-center bg-zinc-900 px-6 py-16 lg:min-h-screen lg:p-12">
+        <div className="flex aspect-[3/4] w-full max-w-md items-center justify-center overflow-hidden rounded-2xl bg-zinc-800 lg:h-full lg:max-h-[80vh]">
+          <IconUser className="h-28 w-28 text-zinc-600" />
+        </div>
+      </div>
+
+      <div className="flex flex-col justify-center gap-6 bg-zinc-950 px-6 py-16 sm:px-12 lg:px-16">
+        <h1 className="font-science text-4xl font-black leading-[0.95] break-words text-white sm:text-5xl lg:text-6xl">
+          Desarrollador Junior Full Stack
+        </h1>
+        <p className="font-oswald text-2xl tracking-wide text-indigo-400 lg:text-3xl">{perfil.nombre}</p>
+        <p className="max-w-xl text-lg text-zinc-300">{perfil.extracto}</p>
+      </div>
+    </section>
+  )
+}
+
+export default HeroSection
