@@ -30,6 +30,11 @@ const portfolioData = {
     aniosExperiencia: '3 años',
   },
 
+  redes: {
+    linkedin: 'https://www.linkedin.com/in/billy-reyes-lópez-79a68a425',
+    github: 'https://github.com/breyes396',
+  },
+
   habilidades: [
     { nombre: 'React Native', porcentaje: 91 },
     { nombre: 'JavaScript', porcentaje: 95 },

@@ -1,5 +1,8 @@
+import portfolioData from '../../shared/data/portfolioData.js'
 import SocialLink from '../../shared/components/SocialLink.jsx'
 import { IconGithub, IconLinkedin } from '../../shared/components/icons/index.jsx'
+
+const { redes } = portfolioData
 
 function Footer() {
   return (
@@ -10,8 +13,8 @@ function Footer() {
         </p>
 
         <div className="flex items-center gap-4">
-          <SocialLink href="#" label="LinkedIn" icon={<IconLinkedin className="h-5 w-5" />} />
-          <SocialLink href="#" label="GitHub" icon={<IconGithub className="h-5 w-5" />} />
+          <SocialLink href={redes.linkedin} label="LinkedIn" icon={<IconLinkedin className="h-5 w-5" />} />
+          <SocialLink href={redes.github} label="GitHub" icon={<IconGithub className="h-5 w-5" />} />
         </div>
       </div>
     </footer>

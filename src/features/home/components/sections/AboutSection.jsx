@@ -18,7 +18,7 @@ function InfoItem({ icon, label, value }) {
       </span>
       <div className="min-w-0">
         <p className="text-xs font-medium uppercase tracking-wide text-zinc-400">{label}</p>
-        <p className="truncate text-sm text-zinc-200">{value}</p>
+        <p className="break-words text-sm text-zinc-200">{value}</p>
       </div>
     </div>
   )
@@ -49,7 +49,7 @@ function AboutSection({ perfil, datosGenerales, onNavigate }) {
           </div>
         </div>
 
-        <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
+        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           <InfoItem icon={<IconUser className="h-4 w-4" />} label="Nombre" value={perfil.nombre} />
           <InfoItem icon={<IconCalendar className="h-4 w-4" />} label="Edad" value={datosGenerales.edad} />
           <InfoItem icon={<IconEnvelope className="h-4 w-4" />} label="Contacto" value={datosGenerales.correo} />

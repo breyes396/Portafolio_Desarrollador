@@ -57,7 +57,7 @@ function AboutView() {
 
         <section>
           <h2 className="mb-4 font-science text-lg text-white">Datos Generales</h2>
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
             <InfoItem icon={<IconUser className="h-5 w-5" />} label="Nombre" value={perfil.nombre} />
             <InfoItem icon={<IconCalendar className="h-5 w-5" />} label="Edad" value={datosGenerales.edad} />
             <InfoItem icon={<IconEnvelope className="h-5 w-5" />} label="Contacto" value={datosGenerales.correo} />

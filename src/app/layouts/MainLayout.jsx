@@ -18,9 +18,9 @@ function MainLayout({ children, currentSection, setSection }) {
 
   return (
     <div className="flex min-h-screen flex-col bg-zinc-950 text-zinc-100">
-      <header className="sticky top-0 z-50 border-b border-zinc-900 bg-zinc-950/80 backdrop-blur">
+      <header className="sticky top-0 z-50 border-b border-zinc-900 bg-zinc-950">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <span className="font-oswald text-lg tracking-wide text-white">Billy Reyes</span>
+          <span className="font-oswald text-lg tracking-wide text-white">Portafolio: Billy Reyes</span>
 
           <ul className="hidden items-center gap-2 md:flex">
             {NAV_ITEMS.map((item) => (

@@ -55,7 +55,13 @@ function ExperienceSection({ educacionTimeline, experiencia, onNavigate }) {
             Conocer más trayectoria
           </Button>
 
-          <Button icon={<IconDownload className="h-5 w-5" />} variant="outline">
+          <Button
+            href="/CV-Billy-Reyes-Lopez.pdf"
+            download="CV-Billy-Reyes-Lopez.pdf"
+            external={false}
+            icon={<IconDownload className="h-5 w-5" />}
+            variant="outline"
+          >
             Descargar CV
           </Button>
         </div>

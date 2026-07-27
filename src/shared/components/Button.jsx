@@ -6,6 +6,7 @@ const VARIANT_CLASSES = {
 function Button({
   href,
   external = true,
+  download,
   onClick,
   icon,
   iconPosition = 'left',
@@ -25,7 +26,12 @@ function Button({
 
   if (href) {
     return (
-      <a href={href} {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})} className={classes}>
+      <a
+        href={href}
+        {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+        {...(download !== undefined ? { download } : {})}
+        className={classes}
+      >
         {content}
       </a>
     )
