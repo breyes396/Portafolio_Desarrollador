@@ -1,5 +1,5 @@
 import Footer from './Footer.jsx'
-import { useMobileMenu } from './hooks/useMobileMenu.js'
+import { useMobileMenu } from '../../shared/hooks/useMobileMenu.js'
 
 const NAV_ITEMS = [
   { id: 'home', label: 'Inicio' },

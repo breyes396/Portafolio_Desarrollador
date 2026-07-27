@@ -36,9 +36,9 @@ El frontend (`pnpm dev` en la raíz) debe apuntar a este servidor mediante la va
 ## Despliegue en Render (dos servicios en el mismo repo)
 
 1. **Frontend** — Static Site
-   - Root Directory: `.` (raíz del repo)
+   - Root Directory: `client`
    - Build Command: `pnpm install && pnpm build`
-   - Publish Directory: `dist`
+   - Publish Directory: `dist` (o `client/dist`)
    - Variable de entorno: `VITE_API_URL` = URL pública del servicio backend (paso 2).
 
 2. **Backend** — Web Service

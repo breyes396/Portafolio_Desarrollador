@@ -3,7 +3,7 @@ import HomeView from '../../features/home/components/HomeView.jsx'
 import AboutView from '../../features/about/components/AboutView.jsx'
 import SkillsView from '../../features/skills/components/SkillsView.jsx'
 import ProjectsView from '../../features/projects/components/ProjectsView.jsx'
-import { useNavigation } from './hooks/useNavigation.js'
+import { useNavigation } from '../../shared/hooks/useNavigation.js'
 
 const sectionViews = {
   home: HomeView,
