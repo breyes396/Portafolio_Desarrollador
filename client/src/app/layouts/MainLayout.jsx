@@ -56,27 +56,40 @@ function MainLayout({ children, currentSection, setSection }) {
             </svg>
           </button>
         </nav>
-
-        {isMenuOpen && (
-          <ul className="flex flex-col gap-1 border-t border-zinc-900 px-6 py-4 md:hidden">
-            {NAV_ITEMS.map((item) => (
-              <li key={item.id}>
-                <button
-                  type="button"
-                  onClick={() => handleNavClick(item.id)}
-                  className={`w-full rounded-md px-4 py-2 text-left text-sm font-medium transition-colors ${
-                    currentSection === item.id
-                      ? 'bg-indigo-500 text-white'
-                      : 'text-zinc-300 hover:bg-zinc-900 hover:text-white'
-                  }`}
-                >
-                  {item.label}
-                </button>
-              </li>
-            ))}
-          </ul>
-        )}
       </header>
+
+      <div
+        className={`fixed inset-0 z-[55] bg-black/60 transition-opacity duration-300 md:hidden ${
+          isMenuOpen ? 'opacity-100' : 'pointer-events-none opacity-0'
+        }`}
+        onClick={closeMenu}
+        aria-hidden="true"
+      />
+
+      <nav
+        className={`fixed inset-y-0 left-0 z-[60] w-72 max-w-[80vw] border-r border-zinc-900 bg-zinc-950 pt-20 shadow-2xl transition-transform duration-300 ease-out md:hidden ${
+          isMenuOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
+        aria-hidden={!isMenuOpen}
+      >
+        <ul className="flex flex-col gap-1 px-4 py-4">
+          {NAV_ITEMS.map((item) => (
+            <li key={item.id}>
+              <button
+                type="button"
+                onClick={() => handleNavClick(item.id)}
+                className={`w-full rounded-md px-4 py-2 text-left text-sm font-medium transition-colors ${
+                  currentSection === item.id
+                    ? 'bg-indigo-500 text-white'
+                    : 'text-zinc-300 hover:bg-zinc-900 hover:text-white'
+                }`}
+              >
+                {item.label}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </nav>
 
       <main className="flex w-full flex-1 flex-col">{children}</main>
 

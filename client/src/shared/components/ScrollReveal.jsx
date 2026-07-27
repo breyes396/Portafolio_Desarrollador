@@ -31,11 +31,6 @@ function ScrollReveal({ children, className = '' }) {
     return () => clearTimeout(timeout)
   }, [isVisible])
 
-  // Una vez asentada, se quitan TAMBIÉN las clases de transición: si solo se quitara
-  // el translate-y pero "transition-all" siguiera activo, el navegador animaría de
-  // nuevo (esta vez hacia "none"), dejando un residuo de sub-píxel que técnicamente
-  // no es "none" y seguiría creando un containing block para elementos position:fixed
-  // (ej. los modales), rompiendo su posicionamiento respecto al viewport.
   const revealClasses = isSettled
     ? 'opacity-100'
     : `transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`
