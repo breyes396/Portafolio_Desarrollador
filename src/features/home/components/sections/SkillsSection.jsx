@@ -9,11 +9,11 @@ function SkillsSection({ habilidades, onNavigate }) {
       <div className="mx-auto max-w-7xl">
         <SectionTitle icon={<IconBolt className="h-5 w-5" />} title="Habilidades" />
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {habilidades.map((skill) => (
-            <div key={skill.tecnologia}>
+            <div key={skill.nombre}>
               <div className="mb-2 flex items-center justify-between text-sm">
-                <span className="font-oswald tracking-wide text-zinc-200">{skill.tecnologia}</span>
+                <span className="font-medium text-zinc-200">{skill.nombre}</span>
                 <span className="font-semibold text-indigo-400">{skill.porcentaje}%</span>
               </div>
               <ProgressBar percentage={skill.porcentaje} />

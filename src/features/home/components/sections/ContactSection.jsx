@@ -1,7 +1,7 @@
 import Button from '../../../../shared/components/Button.jsx'
 import SectionTitle from '../../../../shared/components/SectionTitle.jsx'
 import SocialLink from '../../../../shared/components/SocialLink.jsx'
-import { IconBriefcase, IconEnvelope, IconGithub, IconLinkedin } from '../../../../shared/components/icons/index.jsx'
+import { IconEnvelope, IconGithub, IconLinkedin } from '../../../../shared/components/icons/index.jsx'
 
 const CONTACT_EMAIL = 'billyrey3645@gmail.com'
 
@@ -23,7 +23,6 @@ function ContactSection() {
 
         <div className="mt-8 flex items-center justify-center gap-4">
           <SocialLink href="#" label="LinkedIn" icon={<IconLinkedin className="h-5 w-5" />} />
-          <SocialLink href="#" label="CompuTrabajo" icon={<IconBriefcase className="h-5 w-5" />} />
           <SocialLink href="#" label="GitHub" icon={<IconGithub className="h-5 w-5" />} />
         </div>
       </div>

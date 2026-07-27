@@ -1,5 +1,5 @@
 import SocialLink from '../../shared/components/SocialLink.jsx'
-import { IconBriefcase, IconGithub, IconLinkedin } from '../../shared/components/icons/index.jsx'
+import { IconGithub, IconLinkedin } from '../../shared/components/icons/index.jsx'
 
 function Footer() {
   return (
@@ -11,7 +11,6 @@ function Footer() {
 
         <div className="flex items-center gap-4">
           <SocialLink href="#" label="LinkedIn" icon={<IconLinkedin className="h-5 w-5" />} />
-          <SocialLink href="#" label="CompuTrabajo" icon={<IconBriefcase className="h-5 w-5" />} />
           <SocialLink href="#" label="GitHub" icon={<IconGithub className="h-5 w-5" />} />
         </div>
       </div>

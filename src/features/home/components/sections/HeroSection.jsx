@@ -1,12 +1,14 @@
-import { IconUser } from '../../../../shared/components/icons/index.jsx'
+import perfilImg from '../../../../assets/img/Billy.png'
 
 function HeroSection({ perfil }) {
   return (
     <section className="grid w-full min-h-screen grid-cols-1 lg:grid-cols-2">
       <div className="flex items-center justify-center bg-zinc-900 px-6 py-16 lg:min-h-screen lg:p-12">
-        <div className="flex aspect-[3/4] w-full max-w-md items-center justify-center overflow-hidden rounded-2xl bg-zinc-800 lg:h-full lg:max-h-[80vh]">
-          <IconUser className="h-28 w-28 text-zinc-600" />
-        </div>
+        <img
+          src={perfilImg}
+          alt={perfil.nombre}
+          className="aspect-[3/4] w-full max-w-md rounded-2xl border border-zinc-700 object-cover shadow-lg shadow-black/40 lg:h-full lg:max-h-[80vh]"
+        />
       </div>
 
       <div className="flex flex-col justify-center gap-6 bg-zinc-950 px-6 py-16 sm:px-12 lg:px-10 xl:px-12">

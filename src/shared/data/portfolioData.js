@@ -1,3 +1,5 @@
+import proyectos from './proyectos.js'
+
 const portfolioData = {
   perfil: {
     nombre: 'Billy Adrián Reyes López',
@@ -29,11 +31,20 @@ const portfolioData = {
   },
 
   habilidades: [
-    { tecnologia: 'React Native', porcentaje: 90 },
-    { tecnologia: 'JavaScript', porcentaje: 85 },
-    { tecnologia: 'Tailwind CSS', porcentaje: 80 },
-    { tecnologia: 'Node.js', porcentaje: 60 },
-    { tecnologia: 'ExtendScript para After Effects', porcentaje: 75 },
+    { nombre: 'React Native', porcentaje: 91 },
+    { nombre: 'JavaScript', porcentaje: 95 },
+    { nombre: 'React', porcentaje: 95 },
+    { nombre: 'HTML', porcentaje: 94 },
+    { nombre: 'Java', porcentaje: 96 },
+    { nombre: 'Git', porcentaje: 92 },
+    { nombre: 'CSS', porcentaje: 90 },
+    { nombre: 'GitHub', porcentaje: 90 },
+    { nombre: 'Node.js', porcentaje: 89 },
+    { nombre: 'MySQL', porcentaje: 88 },
+    { nombre: 'C#', porcentaje: 88 },
+    { nombre: '.NET', porcentaje: 87 },
+    { nombre: 'PostgreSQL', porcentaje: 86 },
+    { nombre: 'MongoDB', porcentaje: 89 },
   ],
 
   educacionTimeline: [
@@ -80,32 +91,7 @@ const portfolioData = {
     },
   ],
 
-  proyectos: [
-    {
-      titulo: 'NexusBank',
-      descripcion:
-        'Sistema bancario móvil y web enfocado en el desarrollo de vistas del lado del cliente con React Native.',
-      habilidadesAprendidas: ['React Native', 'Gestión de proyectos con Trello', 'Control de versiones'],
-      github: 'PLACEHOLDER_GITHUB_URL',
-      imagenes: [],
-    },
-    {
-      titulo: 'Proyecto de Seminario',
-      descripcion:
-        'Proyecto de investigación enfocado en la prevención de la violencia escolar y la promoción de materiales para la paz en la comunidad.',
-      habilidadesAprendidas: ['Investigación', 'Redacción académica', 'Trabajo comunitario'],
-      github: 'PLACEHOLDER_GITHUB_URL',
-      imagenes: [],
-    },
-    {
-      titulo: 'Scripts de Automatización',
-      descripcion:
-        'Desarrollo de interfaces y handlers en After Effects usando ExtendScript para la generación automatizada de scripts de video.',
-      habilidadesAprendidas: ['ExtendScript', 'Automatización de procesos', 'Adobe After Effects'],
-      github: 'PLACEHOLDER_GITHUB_URL',
-      imagenes: [],
-    },
-  ],
+  proyectos,
 }
 
 export default portfolioData

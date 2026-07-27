@@ -4,12 +4,12 @@ import ProgressBar from '../../../shared/components/ProgressBar.jsx'
 
 const { habilidades } = portfolioData
 
-function SkillCard({ tecnologia, porcentaje }) {
+function SkillCard({ nombre, porcentaje }) {
   return (
     <Card className="p-6">
-      <div className="mb-3 flex items-center justify-between">
-        <h3 className="font-oswald tracking-wide text-white">{tecnologia}</h3>
-        <span className="text-sm font-medium text-indigo-400">{porcentaje}%</span>
+      <div className="mb-3 flex items-center justify-between text-sm">
+        <h3 className="font-medium text-white">{nombre}</h3>
+        <span className="font-semibold text-indigo-400">{porcentaje}%</span>
       </div>
       <ProgressBar percentage={porcentaje} />
     </Card>
@@ -28,9 +28,9 @@ function SkillsView() {
           </p>
         </header>
 
-        <section className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <section className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {habilidades.map((skill) => (
-            <SkillCard key={skill.tecnologia} {...skill} />
+            <SkillCard key={skill.nombre} {...skill} />
           ))}
         </section>
       </div>
