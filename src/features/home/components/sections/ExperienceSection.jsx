@@ -1,6 +1,6 @@
 import Button from '../../../../shared/components/Button.jsx'
-import Card from '../../../../shared/components/Card.jsx'
 import SectionTitle from '../../../../shared/components/SectionTitle.jsx'
+import TimelineItem from '../../../../shared/components/TimelineItem.jsx'
 import {
   IconArrowRight,
   IconBook,
@@ -8,35 +8,45 @@ import {
   IconDownload,
 } from '../../../../shared/components/icons/index.jsx'
 
-function ExperienceSection({ datosGenerales, experiencia, onNavigate }) {
-  const tutoria = experiencia[0]
-
+function ExperienceSection({ educacionTimeline, experiencia, onNavigate }) {
   return (
     <section className="w-full bg-zinc-900 px-6 py-24 md:px-12">
       <div className="mx-auto max-w-7xl">
         <SectionTitle icon={<IconBriefcase className="h-5 w-5" />} title="Educación y Experiencia" />
 
-        <div className="grid gap-6 sm:grid-cols-2">
-          <Card className="p-6">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-500/10 text-indigo-400">
-              <IconBook className="h-5 w-5" />
-            </span>
-            <h3 className="mt-4 font-oswald tracking-wide text-white">Formación Técnica</h3>
-            <p className="mt-2 text-sm leading-relaxed text-zinc-300">{datosGenerales.educacion}</p>
-          </Card>
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-8">
+          <div>
+            <h3 className="mb-6 font-oswald text-sm uppercase tracking-widest text-indigo-400">Educación</h3>
+            {educacionTimeline.map((item, index) => (
+              <TimelineItem
+                key={item.anio}
+                icon={<IconBook className="h-5 w-5" />}
+                tag={item.anio}
+                title={item.titulo}
+                subtitle={item.resumenHome}
+                isLast={index === educacionTimeline.length - 1}
+              />
+            ))}
+          </div>
 
-          <Card className="p-6">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-500/10 text-indigo-400">
-              <IconBriefcase className="h-5 w-5" />
-            </span>
-            <h3 className="mt-4 font-oswald tracking-wide text-white">
-              {tutoria.rol} · {tutoria.area}
+          <div>
+            <h3 className="mb-6 font-oswald text-sm uppercase tracking-widest text-indigo-400">
+              Experiencia y Proyectos
             </h3>
-            <p className="mt-2 text-sm leading-relaxed text-zinc-300">{tutoria.descripcion}</p>
-          </Card>
+            {experiencia.map((item, index) => (
+              <TimelineItem
+                key={item.titulo}
+                icon={<IconBriefcase className="h-5 w-5" />}
+                tag={item.contexto ?? 'Proyecto'}
+                title={`${item.titulo} — ${item.organizacion}`}
+                subtitle={item.descripcion}
+                isLast={index === experiencia.length - 1}
+              />
+            ))}
+          </div>
         </div>
 
-        <div className="mt-8 flex flex-wrap gap-4">
+        <div className="mt-10 flex flex-wrap gap-4">
           <Button
             onClick={() => onNavigate('about')}
             icon={<IconArrowRight className="h-4 w-4" />}
