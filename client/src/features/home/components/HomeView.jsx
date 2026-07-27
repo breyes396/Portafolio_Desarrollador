@@ -1,4 +1,5 @@
 import portfolioData from '../../../shared/data/portfolioData.js'
+import ScrollReveal from '../../../shared/components/ScrollReveal.jsx'
 import HeroSection from './sections/HeroSection.jsx'
 import AboutSection from './sections/AboutSection.jsx'
 import SkillsSection from './sections/SkillsSection.jsx'
@@ -12,15 +13,30 @@ function HomeView({ onNavigate }) {
   return (
     <div className="flex w-full flex-col">
       <HeroSection perfil={perfil} />
-      <AboutSection perfil={perfil} datosGenerales={datosGenerales} onNavigate={onNavigate} />
-      <SkillsSection habilidades={habilidades} onNavigate={onNavigate} />
-      <ExperienceSection
-        educacionTimeline={educacionTimeline}
-        experiencia={experiencia}
-        onNavigate={onNavigate}
-      />
-      <ProjectsSection proyectos={proyectos} onNavigate={onNavigate} />
-      <ContactSection />
+
+      <ScrollReveal>
+        <AboutSection perfil={perfil} datosGenerales={datosGenerales} onNavigate={onNavigate} />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <SkillsSection habilidades={habilidades} onNavigate={onNavigate} />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <ExperienceSection
+          educacionTimeline={educacionTimeline}
+          experiencia={experiencia}
+          onNavigate={onNavigate}
+        />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <ProjectsSection proyectos={proyectos} onNavigate={onNavigate} />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <ContactSection />
+      </ScrollReveal>
     </div>
   )
 }
